@@ -1,9 +1,10 @@
 package com.wipro.sweater.repos;
 
 import com.wipro.sweater.domain.Message;
-import org.apache.catalina.User;
 import org.springframework.data.repository.CrudRepository;
 
-public interface MessageRepo extends CrudRepository<Message, Long> {
+import java.util.List;
 
+public interface MessageRepo extends CrudRepository<Message, Long> {
+    List<Message> findByTag(String tag);
 }
